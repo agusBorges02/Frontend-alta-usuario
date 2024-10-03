@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import Webcam from 'react-webcam';
-import '../WebcamCapture/WebcamCapture.css';
+import { Button, Typography, Paper } from '@mui/material';
+import './WebcamCapture.css';
 
 const WebcamCapture = ({ setPhoto }) => {
   const webcamRef = useRef(null);
@@ -13,17 +14,23 @@ const WebcamCapture = ({ setPhoto }) => {
   };
 
   return (
-    <div className='capturar-foto-container'>
-      <Webcam
-        audio={false}
-        ref={webcamRef}
-        screenshotFormat="image/jpeg"
-        width={320}
-        height={240}
-      />
-      <button className='boton-capturar-foto' onClick={capturePhoto}>
-        {isCaptured ? 'Foto Capturada' : 'Capturar Foto'}
-      </button>
+    <div className="webcam-capture-container">
+      <Paper className="webcam-paper" elevation={3}>
+        <Webcam
+          audio={false}
+          ref={webcamRef}
+          screenshotFormat="image/jpeg"
+          className="webcam-view"
+        />
+        <Button
+          variant="contained"
+          style={{ backgroundColor: 'grey', color: 'white' }}
+          onClick={capturePhoto}
+          className="capture-button"
+        >
+          {isCaptured ? 'Foto Capturada' : 'Capturar Foto'}
+        </Button>
+      </Paper>
     </div>
   );
 };

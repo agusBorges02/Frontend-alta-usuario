@@ -1,0 +1,83 @@
+/* Contenedor principal del formulario */
+.user-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f7f8fc;
+  }
+  
+  /* Estilo de la tarjeta de registro */
+  .user-form-paper {
+    padding: 30px;
+    border-radius: 16px;
+    max-width: 450px;
+    width: 100%;
+  }
+  
+  /* Título del formulario */
+  .user-form-title {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Estilo del input de nombre */
+  .user-form-input {
+    margin-bottom: 20px;
+  }
+  
+  /* Estilo del botón de registrar */
+  .user-form-button {
+    margin-top: 20px;
+    padding: 12px;
+    background-color: #007bff;
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+  
+  .user-form-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Estilo del modal */
+  .modal-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  /* Estilo de la animación */
+  .success-animation {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+  }
+  
+  /* Mensaje de éxito */
+  .success-message {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #28a745;
+    position: relative;
+  }
+  
+  /* Botón para cerrar el modal */
+  .close-button {
+    position: relative;
+    margin-top: 40px;
+    background-color: #007bff;
+  }
+  
+  .close-button:hover {
+    background-color: #0056b3;
+  }
+  

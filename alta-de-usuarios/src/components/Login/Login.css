@@ -1,0 +1,97 @@
+/* Fondo con degradado y una imagen sutil */
+.login-background {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(0, 123, 255, 0.6), rgba(0, 123, 255, 0.2)), url('https://source.unsplash.com/1600x900/?technology,security');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  /* Contenedor principal del formulario de login */
+  .login-container {
+    position: relative;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.2);
+    align-items: center;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  /* Encabezado del login */
+  .login-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Avatar del icono de login */
+  .login-avatar {
+    margin-bottom: 10px;
+    background-color: #007BFF;
+  }
+  
+  /* Título de la pantalla de login */
+  .login-title {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Estilo del formulario */
+  .login-form {
+    margin-top: 20px;
+  }
+  
+  /* Botón de login */
+  .login-button {
+    margin-top: 20px;
+    padding: 12px;
+    background-color: #007BFF;
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+  
+  .login-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Enlace para recuperar contraseña */
+  .login-footer {
+    margin-top: 20px;
+  }
+  
+  .login-link {
+    color: #007BFF;
+    text-decoration: none;
+  }
+  
+  .login-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* Estilo para el mensaje de error */
+  .login-error {
+    margin-bottom: 20px;
+  }
+  
+  /* Diseño responsive para móviles */
+  @media (max-width: 768px) {
+    .login-container {
+      padding: 30px;
+    }
+  
+    .login-title {
+      font-size: 1.8rem;
+    }
+  
+    .login-button {
+      font-size: 1rem;
+    }
+  }
+  
