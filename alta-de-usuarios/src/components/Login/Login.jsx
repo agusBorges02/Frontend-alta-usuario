@@ -1,22 +1,54 @@
 import React, { useState } from 'react';
-import { Button, TextField, Checkbox, FormControlLabel, Typography, Alert, Avatar, Container, Paper } from '@mui/material';
+import { Button, TextField, Alert, Avatar, Container, Paper, Typography } from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import './Login.css';  
+import './Login.css';
+import axios from 'axios';  // Utiliza axios para hacer solicitudes HTTP
+import { useNavigate } from 'react-router-dom';  // Hook for navigation
 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [idToken, setIdToken] = useState('');
 
-  const handleLogin = (e) => {
+  const client_id = '3l22269soo31kqtj9v3tt36bne';  // Cognito Client ID
+  const navigate = useNavigate();  // Hook for navigation
+
+  const handleLogin = async (e) => {
     e.preventDefault();
-    // Aquí puedes agregar la lógica de autenticación
-    if (username === 'admin' && password === 'admin') {
-      // Autenticación exitosa
+
+    try {
+      const response = await axios.post('https://cognito-idp.us-east-1.amazonaws.com/', 
+        {
+          AuthFlow: 'USER_PASSWORD_AUTH',
+          ClientId: client_id,
+          AuthParameters: {
+            USERNAME: username,
+            PASSWORD: password
+          }
+        },
+        {
+          headers: {
+            'Content-Type': 'application/x-amz-json-1.1',
+            'X-Amz-Target': 'AWSCognitoIdentityProviderService.InitiateAuth'
+          }
+        }
+      );
+      
+      const idToken = response.data.AuthenticationResult.IdToken;
+      setIdToken(idToken);
       setError('');
-      console.log('Inicio de sesión exitoso');
-    } else {
+      // Almacenar el token en localStorage
+      localStorage.setItem('idToken', idToken);
+
+      console.log('Autenticación exitosa. Token:', idToken);
+
+      // Navigate to the user form and pass the idToken via state
+      navigate('/user-form', { state: { idToken } });  // Send the token to the user-form page
+
+    } catch (err) {
       setError('Usuario o contraseña incorrectos.');
+      console.log('Error de autenticación:', err);
     }
   };
 
