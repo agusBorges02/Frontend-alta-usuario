@@ -107,9 +107,9 @@ const UserForm = () => {
 
           <FormControl fullWidth>
             <InputLabel id="camera-select-label">Seleccionar Cámara(s)</InputLabel>
-            <br />
             <Select
               labelId="camera-select-label"
+              label="Seleccionar Cámara(s)"
               multiple
               value={selectedCameras}
               onChange={handleCameraChange}
