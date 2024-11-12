@@ -1,0 +1,128 @@
+/* Contenedor principal del formulario */
+.user-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f7f8fc;
+  padding: 20px;
+}
+
+/* Barra superior */
+.header {
+  display: flex;
+  justify-content: space-between; /* Cambiado para distribuir mejor los elementos */
+  align-items: center;
+  padding: 15px 30px;
+  width: 100%;
+  background-color: #007bff;
+  color: white;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+}
+
+/* Información del usuario */
+.user-info {
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espacio entre el avatar y el nombre */
+}
+
+/* Nombre de usuario */
+.user-name {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+/* Botón de logout */
+.logout-button {
+  color: white;
+  background-color: #d32f2f;
+  border-radius: 50%;
+  padding: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #b71c1c;
+}
+
+/* Estilo de la tarjeta de registro */
+.user-form-paper {
+  padding: 30px;
+  border-radius: 16px;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Título del formulario */
+.user-form-title {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+/* Estilo del input de nombre */
+.user-form-input {
+  margin-bottom: 20px;
+}
+
+/* Botón de registrar */
+.user-form-button {
+  margin-top: 20px;
+  padding: 12px;
+  background-color: #007bff;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.user-form-button:hover {
+  background-color: #0056b3;
+}
+
+/* Modal */
+.modal-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .user-form-container {
+    padding: 10px;
+  }
+
+  .user-form-paper {
+    padding: 20px;
+    margin-top: 100px;
+  }
+
+  .header {
+    padding: 15px;
+  }
+
+  .user-name {
+    font-size: 1rem;
+  }
+
+  .user-form-title {
+    font-size: 1.2rem;
+  }
+}

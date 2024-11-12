@@ -1,0 +1,36 @@
+/* Contenedor del webcam */
+.webcam-capture-container {
+    margin-bottom: 20px;
+    text-align: center;
+    border-radius: 20px;
+  }
+  
+  /* Contenedor de la cámara */
+  .webcam-paper {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Vista de la webcam */
+  .webcam-view {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    border: 2px solid #ddd;
+  }
+  
+  /* Botón de capturar foto */
+  .capture-button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #28a745;
+  }
+  
+  .capture-button:hover {
+    background-color: #218838;
+  }
+  
